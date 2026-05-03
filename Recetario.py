@@ -17,7 +17,7 @@ def buscar_categoria(categoria):
 
 def mostrar_recetas(categoria):
     ruta = Path()
-    en_categoria = ruta.relative_to()
+    en_categoria = ruta.relative_to(Path("Recetario", categoria))
     return
 
 def buscar_recetas():
