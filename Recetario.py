@@ -2,12 +2,27 @@ from pathlib import Path
 from os import system
 
 #Funciones para el recetario
+def solicitar_categoria():
+    categoria = input("Ingresa el nombre de la categoría que deseas explorar: ")
+    return categoria
+
 def mostrar_categorias():
     categorias = guia.relative_to(Path("Recetario"))
     print(categorias)
 
-def buscar_categoria(nombre_categoria):
-    pass
+def buscar_categoria(categoria):
+    ruta = Path(Path.home() / categoria)
+
+    return
+
+def mostrar_recetas(categoria):
+    ruta = Path()
+    en_categoria = ruta.relative_to()
+    return
+
+def buscar_recetas():
+
+    return
 
 nombre_usuario: str = input("Ingresa tu nombre: ")
 print(f"Hola, {nombre_usuario}. Bienvenido al Recetario.")
@@ -25,19 +40,27 @@ while editando:
                  "3. Crear nueva categoría\n4. Eliminar receta\n5. Eliminar categoría\n6. Salir del programa"))
    if menu == 1:
        #función que muestra las recetas.
-       nombre_categoria = input("Ingresa el nombre de la categoría en la que quieres ver recetas: ")
+       mostrar_categorias()
+       solicitar_categoria()
+       buscar_categoria(solicitar_categoria())
+       mostrar_recetas(solicitar_categoria())
+
 
    elif menu == 2:
        #función que crea una nueva receta.
+      pass
 
    elif menu == 3:
-       #función que crea una nueva categoría.
+      #función que crea una nueva categoría.
+      pass
 
    elif menu == 4:
       #función que elimina una receta.
+      pass
 
    elif menu == 5:
       #funcion que elimina una categoría.
+      pass
 
    elif menu == 6:
       print('Hasta la próxima.')
