@@ -21,6 +21,8 @@ def mostrar_recetas(categoria):
     return
 
 def solicitar_receta():
+    receta = input("Ingresa la receta que deseas buscar: ")
+    return receta
 
 def buscar_recetas():
 
