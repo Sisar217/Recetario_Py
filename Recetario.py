@@ -20,6 +20,8 @@ def mostrar_recetas(categoria):
     en_categoria = ruta.relative_to(Path("Recetario", categoria))
     return
 
+def solicitar_receta():
+
 def buscar_recetas():
 
     return
@@ -28,23 +30,25 @@ nombre_usuario: str = input("Ingresa tu nombre: ")
 print(f"Hola, {nombre_usuario}. Bienvenido al Recetario.")
 base = Path("Recetario")
 guia = Path(Path.home() / "Recetario")
-cantidad = 0
-for cantidad in Path(guia).glob("**/*.txt"):
-    cantidad += 1
+cantidad = sum(1 for _ in Path(guia).glob("**/*.txt"))
 print(f"Puedes encontrar los archivos del recetario en {base}.\nHay un total de {cantidad} recetas.")
 #El código anterior sirve únicamente como presentación o parte inicial del programa.
 
 editando = True
 while editando:
+
+   categoria_elegida = solicitar_categoria()
+   receta_elegida = solicitar_receta()
+
    menu = int(input("Selecciona una opción del siguiente menú:\n1. Leer recetas\n2. Crear receta\n"
                  "3. Crear nueva categoría\n4. Eliminar receta\n5. Eliminar categoría\n6. Salir del programa"))
    if menu == 1:
        #función que muestra las recetas.
        mostrar_categorias()
        solicitar_categoria()
-       buscar_categoria(solicitar_categoria())
-       mostrar_recetas(solicitar_categoria())
-
+       buscar_categoria(categoria_elegida)
+       mostrar_recetas(categoria_elegida)
+       buscar_recetas()
 
    elif menu == 2:
        #función que crea una nueva receta.
